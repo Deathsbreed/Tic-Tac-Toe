@@ -29,14 +29,14 @@ int main() {
 	do {
 		int r, c;
 		int valid = 0;
-		printf(" %c | %c | %c\n", getChar(boxes[0][0]),
-			getChar(boxes[0][1]), getChar(boxes[0][2]));
+		printf(" %c | %c | %c\n", getChar(grid[0][0]),
+			getChar(grid[0][1]), getChar(grid[0][2]));
 		printf("---+---+---\n");
-		printf(" %c | %c | %c\n", getChar(boxes[1][0]),
-			getChar(boxes[1][1]), getChar(boxes[1][2]));
+		printf(" %c | %c | %c\n", getChar(grid[1][0]),
+			getChar(grid[1][1]), getChar(grid[1][2]));
 		printf("---+---+---\n");
-		printf(" %c | %c | %c\n", getChar(boxes[2][0]),
-			getChar(boxes[2][1]), getChar(boxes[2][2]));
+		printf(" %c | %c | %c\n", getChar(grid[2][0]),
+			getChar(grid[2][1]), getChar(grid[2][2]));
 
 		if(!turn) printf("It's X's turn to play\n");
 		else printf("It's O's turn to play\n");
