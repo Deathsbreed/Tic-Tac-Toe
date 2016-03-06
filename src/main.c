@@ -28,7 +28,7 @@ int main() {
 	int running = 1;
 	do {
 		int r, c;
-		int valid = 0;
+		int valid = 1;
 		printf(" %c | %c | %c\n", getChar(grid[0][0]),
 			getChar(grid[0][1]), getChar(grid[0][2]));
 		printf("---+---+---\n");
@@ -46,7 +46,7 @@ int main() {
 			printf("Column: ");
 			scanf("%d", &c);
 			if(r < 3 && r > -1 && c < 3 && c > -1 && grid[r][c] == 0) {
-				valid = 1;
+				valid = 0;
 			} else {
 				printf("Your answer is invalid, please try again.\n");
 			}
