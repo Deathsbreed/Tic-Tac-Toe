@@ -6,6 +6,7 @@
  * 2 - O
  */
 int grid[3][3];
+int winner;
 
 char getChar(int in) {
 	if(in == 0) {
@@ -52,7 +53,34 @@ int main() {
 			}
 		} while(valid);
 		grid[r][c] = turn ? 2 : 1;
+
+		/* Check for win */
+		for(int i = 0; i < 3; i++) {
+			if(grid[i][0] == grid[i][1] && grid[i][0] == grid[i][2] && grid[i][0] != 0) {
+				running = 0;
+				winner = grid[i][0];
+			} else if(grid[0][i] == grid[1][i] && grid[0][i] == grid[2][i] && grid[0][i] != 0) {
+				running = 0;
+				winner = grid[0][i];
+			}
+		}
+		if(grid[0][0] == grid[1][1] && grid[0][0] == grid[2][2] && grid[0][0] != 0) {
+			running = 0;
+			winner = grid[0][0];
+		} else if(grid[0][2] == grid[1][1] && grid[0][2] == grid[2][0] && grid[0][2] != 0) {
+			running = 0;
+			winner = grid[0][2];
+		}
+
 		turn = turn ? 0 : 1;
+
+		if(!running) {
+			if(winner == 1) {
+				printf("X wins!\n\n");
+			} else {
+				printf("Y wins!\n\n");
+			}
+		}
 	} while(running);
 
 	return 0;
